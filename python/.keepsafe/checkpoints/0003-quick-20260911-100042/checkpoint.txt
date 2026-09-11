@@ -1,0 +1,62 @@
+Checkpoint: 0003-quick-20260911-100042
+Name: quick-20260911-100042
+Created: 2026-09-11T15:00:42Z
+Mode: delta
+Base: 0002-quick-20260910-231617
+
+A .untangleit/runs.json
+--- .untangleit/runs.json ---
+{
+  "version": 1,
+  "runs": [
+    {
+      "id": "mtwg1xgp-y1d4ch",
+      "path": "helloworld/schedule.py",
+      "name": "_pick_english_greeting",
+      "startLine": 43,
+      "before": 15,
+      "limit": 5,
+      "by": "vange",
+      "startedAt": "2026-09-11T04:16:19.369Z",
+      "rounds": 1,
+      "status": "still-over",
+      "snapshot": {
+        "path": "helloworld/schedule.py",
+        "name": "_pick_english_greeting",
+        "startLine": 43,
+        "endLine": 79,
+        "complexity": 15,
+        "siblings": [
+          {
+            "name": "pick_greeting",
+            "startLine": 9,
+            "complexity": 13
+          },
+          {
+            "name": "_pick_english_greeting",
+            "startLine": 43,
+            "complexity": 15
+          }
+        ]
+      },
+      "measuredAt": "2026-09-11T15:00:33.971Z",
+      "pieces": [
+        {
+          "name": "_pick_english_greeting",
+          "startLine": 43,
+          "endLine": 79,
+          "complexity": 15,
+          "over": 10,
+          "kind": "original"
+        }
+      ],
+      "tests": {
+        "passed": 10,
+        "failed": 0,
+        "errors": 0
+      },
+      "outcome": "Not done. 1 piece: _pick_english_greeting() 15. 1 piece is still over your limit of 5. All 10 tests pass. Your call."
+    }
+  ]
+}
+

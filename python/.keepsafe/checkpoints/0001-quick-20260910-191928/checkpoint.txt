@@ -1,0 +1,303 @@
+Checkpoint: 0001-quick-20260910-191928
+Name: quick-20260910-191928
+Created: 2026-09-11T00:19:28Z
+Mode: snapshot
+
+A .gitignore
+--- .gitignore ---
+.venv/
+__pycache__/
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.deeptest/
+.refactorit/
+
+A .vscode/settings.json
+--- .vscode/settings.json ---
+{
+    "deeptest.language": "python",
+    "deeptest.testsPath": "tests",
+    "deeptest.sourceRoot": "",
+    "deeptest.languageSettings": {
+        "python": {
+            "interpreter": "C:\\workspace\\HelloWorld\\.venv\\Scripts\\python.exe",
+            "pytestArgs": ""
+        }
+    },
+    "deeptest.thresholds.minCoverage": 80,
+    "deeptest.thresholds.minDensityPassRate": 90,
+    "deeptest.thresholds.minAverageDensity": 1,
+    "deeptest.thresholds.maxFunctionComplexity": 10,
+    "deeptest.report.detailedRoutes": 5,
+    "deeptest.showNumbers": false,
+    "deeptest.keepSafe.offerCheckpoint": true,
+    "deeptest.depth.countShortCircuit": true,
+    "deeptest.depth.countTernary": true,
+    "deeptest.depth.countComprehensions": true,
+    "deeptest.depth.countExcept": true,
+    "deeptest.overlay.showInlineNumbers": true,
+    "refactorit.language": "python",
+    "refactorit.testsPath": "tests",
+    "refactorit.sourceRoot": "",
+    "refactorit.languageSettings": {
+        "python": {
+            "interpreter": "C:\\workspace\\HelloWorld\\.venv\\Scripts\\python.exe",
+            "pytestArgs": ""
+        }
+    },
+    "refactorit.limit": 5,
+    "refactorit.rounds": 3,
+    "refactorit.showNumbers": false,
+    "refactorit.keepSafe.offerCheckpoint": true
+}
+
+A helloworld/__init__.py
+--- helloworld/__init__.py ---
+"""HelloWorld: a small, deliberately uneven demo project for DeepTest and RefactorIt.
+
+The module layout is the point of the project:
+
+- greet.py       clean, simple, fully tested.
+- names.py       simple, but the tests are thin (one happy path each).
+- schedule.py    one tangled function with no tests at all. This is the villain.
+"""
+
+from .greet import hello, hello_many
+from .names import clean_name, initials
+from .schedule import pick_greeting
+
+__all__ = ["hello", "hello_many", "clean_name", "initials", "pick_greeting"]
+
+A helloworld/greet.py
+--- helloworld/greet.py ---
+"""Simple greetings. Every path here is covered by tests/test_greet.py."""
+
+
+def hello(name: str = "World") -> str:
+    """Return the classic greeting for one name."""
+    if not name:
+        name = "World"
+    return f"Hello, {name}!"
+
+
+def hello_many(names: list[str]) -> str:
+    """Greet several people in one line."""
+    if not names:
+        return hello()
+    if len(names) == 1:
+        return hello(names[0])
+    return f"Hello, {', '.join(names[:-1])} and {names[-1]}!"
+
+
+def shout(text: str) -> str:
+    """Make a greeting louder."""
+    return text.upper().replace("!", "!!!")
+
+A helloworld/names.py
+--- helloworld/names.py ---
+"""Name helpers. These have tests, but only one happy path each.
+
+DeepTest should flag the branches the tests never reach."""
+
+
+def clean_name(raw: str) -> str:
+    """Trim whitespace and fix capitalisation."""
+    name = raw.strip()
+    if not name:
+        return ""
+    if name.isupper() or name.islower():
+        name = name.title()
+    return name
+
+
+def initials(full_name: str) -> str:
+    """Return the initials of a full name, e.g. 'Jeff Q Public' -> 'J.Q.P.'"""
+    parts = [p for p in full_name.split() if p]
+    if not parts:
+        return ""
+    if len(parts) == 1:
+        return parts[0][0].upper() + "."
+    return "".join(p[0].upper() + "." for p in parts)
+
+
+def nickname(full_name: str, max_len: int = 8) -> str:
+    """Shorten a first name for a casual greeting."""
+    first = full_name.split()[0] if full_name.split() else ""
+    if len(first) > max_len:
+        return first[:max_len] + "."
+    return first
+
+A helloworld/schedule.py
+--- helloworld/schedule.py ---
+"""The villain.
+
+pick_greeting() works, mostly, but nobody wrote a test for it and it is
+nested five levels deep. This is the function DeepTest should put at the
+top of its report, and the one RefactorIt should be pointed at afterwards.
+"""
+
+
+def pick_greeting(hour: int, name: str, lang: str = "en", formal: bool = False, mood: str = "ok") -> str:
+    """Choose a greeting based on the time of day, language, formality, and mood."""
+    if lang == "en":
+        if hour < 12:
+            if formal:
+                if mood == "great":
+                    return f"Good morning, {name}. What a fine day."
+                elif mood == "bad":
+                    return f"Good morning, {name}. I hope it improves."
+                else:
+                    return f"Good morning, {name}."
+            else:
+                if mood == "great":
+                    return f"Morning, {name}! Feeling good?"
+                elif mood == "bad":
+                    return f"Morning, {name}. Rough one?"
+                else:
+                    return f"Morning, {name}!"
+        elif hour < 18:
+            if formal:
+                if mood == "great":
+                    return f"Good afternoon, {name}. Splendid."
+                elif mood == "bad":
+                    return f"Good afternoon, {name}. Chin up."
+                else:
+                    return f"Good afternoon, {name}."
+            else:
+                if mood == "great" or mood == "ok":
+                    return f"Hey {name}!"
+                else:
+                    return f"Hey {name}. Hang in there."
+        else:
+            if formal:
+                return f"Good evening, {name}."
+            else:
+                if mood == "bad":
+                    return f"Evening, {name}. Long day?"
+                else:
+                    return f"Evening, {name}!"
+    elif lang == "es":
+        if hour < 12:
+            if formal:
+                return f"Buenos dias, {name}."
+            else:
+                return f"Buenas, {name}!"
+        elif hour < 20:
+            if formal and mood != "bad":
+                return f"Buenas tardes, {name}."
+            elif formal:
+                return f"Buenas tardes, {name}. Animo."
+            else:
+                return f"Buenas, {name}!"
+        else:
+            return f"Buenas noches, {name}."
+    elif lang == "fr":
+        if hour < 18:
+            if formal:
+                return f"Bonjour, {name}."
+            else:
+                return f"Salut, {name}!"
+        else:
+            return f"Bonsoir, {name}."
+    else:
+        if formal:
+            return f"Hello, {name}."
+        else:
+            return f"Hello, {name}!"
+
+A pyproject.toml
+--- pyproject.toml ---
+[project]
+name = "helloworld"
+version = "0.1.0"
+description = "A small, deliberately uneven demo project for DeepTest and RefactorIt."
+requires-python = ">=3.9"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+A README.md
+--- README.md ---
+# HelloWorld
+
+A small Python project built to be uneven on purpose. It exists so DeepTest and RefactorIt have something worth pointing at during a demo.
+
+## What is in it
+
+| File | Tests | Purpose in the demo |
+|---|---|---|
+| `helloworld/greet.py` | Full | Three small functions, every branch tested. Should come up green. |
+| `helloworld/names.py` | Thin | Three functions, two tests, one happy path each. `nickname()` has no test at all. Should come up yellow and red. |
+| `helloworld/schedule.py` | None | `pick_greeting()`, nested five levels deep with no tests. This is the worst offender, and the function to hand to RefactorIt afterwards. |
+
+## Run it
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements-dev.txt
+pytest
+```
+
+Expected: 10 passed.
+
+A requirements-dev.txt
+--- requirements-dev.txt ---
+pytest>=8
+pytest-cov>=5
+
+A tests/__init__.py
+--- tests/__init__.py ---
+
+
+A tests/test_greet.py
+--- tests/test_greet.py ---
+from helloworld.greet import hello, hello_many, shout
+
+
+def test_hello_default():
+    assert hello() == "Hello, World!"
+
+
+def test_hello_named():
+    assert hello("Jeff") == "Hello, Jeff!"
+
+
+def test_hello_empty_falls_back_to_world():
+    assert hello("") == "Hello, World!"
+
+
+def test_hello_many_empty():
+    assert hello_many([]) == "Hello, World!"
+
+
+def test_hello_many_one():
+    assert hello_many(["Jeff"]) == "Hello, Jeff!"
+
+
+def test_hello_many_two():
+    assert hello_many(["Jeff", "Ann"]) == "Hello, Jeff and Ann!"
+
+
+def test_hello_many_three():
+    assert hello_many(["Jeff", "Ann", "Bob"]) == "Hello, Jeff, Ann and Bob!"
+
+
+def test_shout():
+    assert shout("Hello, Jeff!") == "HELLO, JEFF!!!"
+
+A tests/test_names.py
+--- tests/test_names.py ---
+from helloworld.names import clean_name, initials
+
+
+def test_clean_name_trims():
+    assert clean_name("  Jeff ") == "Jeff"
+
+
+def test_initials_two_parts():
+    assert initials("Jeff Public") == "J.P."
+

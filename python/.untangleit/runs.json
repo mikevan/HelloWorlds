@@ -1,0 +1,105 @@
+{
+  "version": 1,
+  "runs": [
+    {
+      "id": "mtwg1xgp-y1d4ch",
+      "path": "helloworld/schedule.py",
+      "name": "_pick_english_greeting",
+      "startLine": 43,
+      "before": 15,
+      "limit": 5,
+      "by": "vange",
+      "startedAt": "2026-09-11T04:16:19.369Z",
+      "rounds": 2,
+      "status": "still-over",
+      "snapshot": {
+        "path": "helloworld/schedule.py",
+        "name": "_pick_english_greeting",
+        "startLine": 43,
+        "endLine": 79,
+        "complexity": 15,
+        "siblings": [
+          {
+            "name": "pick_greeting",
+            "startLine": 9,
+            "complexity": 13
+          },
+          {
+            "name": "_pick_english_greeting",
+            "startLine": 43,
+            "complexity": 15
+          }
+        ]
+      },
+      "measuredAt": "2026-09-11T20:29:46.259Z",
+      "pieces": [
+        {
+          "name": "pick_greeting",
+          "startLine": 9,
+          "endLine": 40,
+          "complexity": 13,
+          "campbell": 28,
+          "mbcc": 47,
+          "over": 42,
+          "kind": "changed"
+        },
+        {
+          "name": "_pick_english_greeting",
+          "startLine": 43,
+          "endLine": 55,
+          "complexity": 5,
+          "campbell": 10,
+          "mbcc": 14,
+          "over": 9,
+          "kind": "original"
+        },
+        {
+          "name": "_pick_english_afternoon_greeting",
+          "startLine": 58,
+          "endLine": 65,
+          "complexity": 4,
+          "campbell": 6,
+          "mbcc": 5,
+          "over": 0,
+          "kind": "new"
+        },
+        {
+          "name": "_pick_formal_english_afternoon_greeting",
+          "startLine": 68,
+          "endLine": 74,
+          "complexity": 3,
+          "campbell": 3,
+          "mbcc": 1,
+          "over": 0,
+          "kind": "new"
+        },
+        {
+          "name": "_pick_english_morning_greeting",
+          "startLine": 77,
+          "endLine": 86,
+          "complexity": 4,
+          "campbell": 6,
+          "mbcc": 5,
+          "over": 0,
+          "kind": "new"
+        },
+        {
+          "name": "_pick_formal_english_morning_greeting",
+          "startLine": 89,
+          "endLine": 95,
+          "complexity": 3,
+          "campbell": 3,
+          "mbcc": 1,
+          "over": 0,
+          "kind": "new"
+        }
+      ],
+      "tests": {
+        "passed": 10,
+        "failed": 0,
+        "errors": 0
+      },
+      "outcome": "Not done. 6 pieces: pick_greeting() 47, _pick_english_greeting() 14, _pick_english_afternoon_greeting() 5, _pick_formal_english_afternoon_greeting() 1, _pick_english_morning_greeting() 5, _pick_formal_english_morning_greeting() 1. 2 pieces are still over your limit of 5. All 10 tests pass. Your call."
+    }
+  ]
+}

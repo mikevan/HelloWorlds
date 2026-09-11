@@ -1,0 +1,36 @@
+{
+    "deeptest.language": "python",
+    "deeptest.testsPath": "tests",
+    "deeptest.sourceRoot": "",
+    "deeptest.languageSettings": {
+        "python": {
+            "interpreter": "C:\\workspace\\HelloWorld\\.venv\\Scripts\\python.exe",
+            "pytestArgs": ""
+        }
+    },
+    "deeptest.thresholds.minCoverage": 80,
+    "deeptest.thresholds.minDensityPassRate": 90,
+    "deeptest.thresholds.minAverageDensity": 1,
+    "deeptest.thresholds.maxFunctionComplexity": 10,
+    "deeptest.report.detailedRoutes": 5,
+    "deeptest.showNumbers": false,
+    "deeptest.keepSafe.offerCheckpoint": true,
+    "deeptest.depth.countShortCircuit": true,
+    "deeptest.depth.countTernary": true,
+    "deeptest.depth.countComprehensions": true,
+    "deeptest.depth.countExcept": true,
+    "deeptest.overlay.showInlineNumbers": true,
+    "untangleit.language": "python",
+    "untangleit.testsPath": "tests",
+    "untangleit.sourceRoot": "",
+    "untangleit.languageSettings": {
+        "python": {
+            "interpreter": "C:\\workspace\\HelloWorld\\.venv\\Scripts\\python.exe",
+            "pytestArgs": ""
+        }
+    },
+    "untangleit.limit": 5,
+    "untangleit.rounds": 3,
+    "untangleit.showNumbers": false,
+    "untangleit.keepSafe.offerCheckpoint": true
+}
