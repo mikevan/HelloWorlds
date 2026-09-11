@@ -1,0 +1,19 @@
+# Every port keeps its own dependencies out of the repository.
+node_modules/
+.venv/
+__pycache__/
+.pytest_cache/
+coverage/
+dist/
+build/
+target/
+bin/
+obj/
+.angular/
+# Tool records that are regenerated on every run. Decisions and run history travel with the code.
+.deeptest/coverage/
+.deeptest/attribution/
+.deeptest/coverage.json
+.deeptest/coveragerc
+.keepsafe/
+_to_delete/

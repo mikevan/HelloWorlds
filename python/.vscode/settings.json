@@ -4,7 +4,7 @@
     "deeptest.sourceRoot": "",
     "deeptest.languageSettings": {
         "python": {
-            "interpreter": "C:\\workspace\\HelloWorld\\.venv\\Scripts\\python.exe",
+            "interpreter": "C:\\workspace\\HelloWorlds\\python\\.venv\\Scripts\\python.exe",
             "pytestArgs": ""
         }
     },
@@ -25,7 +25,7 @@
     "untangleit.sourceRoot": "",
     "untangleit.languageSettings": {
         "python": {
-            "interpreter": "C:\\workspace\\HelloWorld\\.venv\\Scripts\\python.exe",
+            "interpreter": "C:\\workspace\\HelloWorlds\\python\\.venv\\Scripts\\python.exe",
             "pytestArgs": ""
         }
     },
