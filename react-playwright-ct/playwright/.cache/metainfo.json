@@ -1,0 +1,94 @@
+{
+  "version": "1.62.1",
+  "viteVersion": "8.3.0",
+  "registerSourceHash": "85db59172094cddf5d94a431f1e266558395f6b8",
+  "components": [
+    {
+      "id": "C__workspace_HelloWorlds_react_playwright_ct_src_components_Greeting_Greeting",
+      "filename": "C:\\workspace\\HelloWorlds\\react-playwright-ct\\src\\components\\Greeting.spec.tsx",
+      "importSource": "./Greeting",
+      "remoteName": "Greeting"
+    },
+    {
+      "id": "C__workspace_HelloWorlds_react_playwright_ct_src_components_NameTag_NameTag",
+      "filename": "C:\\workspace\\HelloWorlds\\react-playwright-ct\\src\\components\\NameTag.spec.tsx",
+      "importSource": "./NameTag",
+      "remoteName": "NameTag"
+    }
+  ],
+  "sources": {
+    "C:/workspace/HelloWorlds/react-playwright-ct/playwright/index.html": {
+      "timestamp": 1789180157892.766
+    },
+    "C:/workspace/HelloWorlds/react-playwright-ct/playwright/index.ts": {
+      "timestamp": 1789180157902.763
+    },
+    "C:/workspace/HelloWorlds/react-playwright-ct/src/components/Greeting.tsx": {
+      "timestamp": 1789180157831.7617
+    },
+    "C:/workspace/HelloWorlds/react-playwright-ct/src/components/NameTag.tsx": {
+      "timestamp": 1789180157843.7617
+    },
+    "C:/workspace/HelloWorlds/react-playwright-ct/src/greet.ts": {
+      "timestamp": 1789180157772.762
+    },
+    "C:/workspace/HelloWorlds/react-playwright-ct/src/names.ts": {
+      "timestamp": 1789180157791.7612
+    },
+    "C:/workspace/HelloWorlds/react-playwright-ct/node_modules/react/index.js": {
+      "timestamp": 1789181992954.0117
+    },
+    "C:/workspace/HelloWorlds/react-playwright-ct/node_modules/react-dom/client.js": {
+      "timestamp": 1789181992972.014
+    },
+    "C:/workspace/HelloWorlds/react-playwright-ct/node_modules/react/jsx-runtime.js": {
+      "timestamp": 1789181992993.014
+    },
+    "C:/workspace/HelloWorlds/react-playwright-ct/node_modules/react-dom/cjs/react-dom-client.production.js": {
+      "timestamp": 1789181993347.563
+    },
+    "C:/workspace/HelloWorlds/react-playwright-ct/node_modules/react-dom/cjs/react-dom-client.development.js": {
+      "timestamp": 1789181993299.5613
+    },
+    "C:/workspace/HelloWorlds/react-playwright-ct/node_modules/react/cjs/react-jsx-runtime.production.js": {
+      "timestamp": 1789181993152.0132
+    },
+    "C:/workspace/HelloWorlds/react-playwright-ct/node_modules/react/cjs/react-jsx-runtime.development.js": {
+      "timestamp": 1789181993144.0122
+    },
+    "C:/workspace/HelloWorlds/react-playwright-ct/node_modules/react/cjs/react.development.js": {
+      "timestamp": 1789181993211.012
+    },
+    "C:/workspace/HelloWorlds/react-playwright-ct/node_modules/react/cjs/react.production.js": {
+      "timestamp": 1789181993227.561
+    },
+    "C:/workspace/HelloWorlds/react-playwright-ct/node_modules/scheduler/index.js": {
+      "timestamp": 1789181992937.012
+    },
+    "C:/workspace/HelloWorlds/react-playwright-ct/node_modules/react-dom/index.js": {
+      "timestamp": 1789181992992.013
+    },
+    "C:/workspace/HelloWorlds/react-playwright-ct/node_modules/scheduler/cjs/scheduler.development.js": {
+      "timestamp": 1789181993036.0127
+    },
+    "C:/workspace/HelloWorlds/react-playwright-ct/node_modules/scheduler/cjs/scheduler.production.js": {
+      "timestamp": 1789181993096.0122
+    },
+    "C:/workspace/HelloWorlds/react-playwright-ct/node_modules/react-dom/cjs/react-dom.production.js": {
+      "timestamp": 1789181994041.1433
+    },
+    "C:/workspace/HelloWorlds/react-playwright-ct/node_modules/react-dom/cjs/react-dom.development.js": {
+      "timestamp": 1789181994036.4536
+    }
+  },
+  "deps": {
+    "C:\\workspace\\HelloWorlds\\react-playwright-ct\\src\\components\\Greeting.tsx": [
+      "C:\\workspace\\HelloWorlds\\react-playwright-ct\\src\\components\\Greeting.tsx",
+      "C:\\workspace\\HelloWorlds\\react-playwright-ct\\src\\greet.ts"
+    ],
+    "C:\\workspace\\HelloWorlds\\react-playwright-ct\\src\\components\\NameTag.tsx": [
+      "C:\\workspace\\HelloWorlds\\react-playwright-ct\\src\\components\\NameTag.tsx",
+      "C:\\workspace\\HelloWorlds\\react-playwright-ct\\src\\names.ts"
+    ]
+  }
+}

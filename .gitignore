@@ -17,3 +17,5 @@ obj/
 .deeptest/coveragerc
 .keepsafe/
 _to_delete/
+test-results/
+playwright/.cache/

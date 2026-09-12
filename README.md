@@ -22,6 +22,7 @@ Same functions, same tests, same villain, so the same report comes out in every 
 | `angular-vitest` | Angular, `ng test` through the Vitest builder | 1.0 |
 | `angular-karma` | Angular, Karma with Jasmine | 1.0 |
 | `node-mocha` | Plain Node, ES modules, Mocha; no coverage package, measured by Witness | 1.0 |
+| `react-playwright-ct` | React, TypeScript, Playwright component tests; measured by Witness in the page | 1.0 |
 | `java` | Java, Maven, JUnit, JaCoCo | 1.1 |
 | `csharp` | C#, `dotnet test`, xUnit | 1.2 |
 
